@@ -1,3 +1,4 @@
+import { dummyMethod } from './dummy.js';
 import { writeData } from './util/io.js';
 
 export function generateReportData(logFn) {
@@ -13,4 +14,9 @@ export async function storeData(data) {
     throw new Error('No data received!');
   }
   await writeData(data, 'data.txt');
+}
+
+export function spiedFunction() {
+  dummyMethod();
+  return 'spied execution complete';
 }
